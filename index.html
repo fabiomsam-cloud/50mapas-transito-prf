@@ -457,6 +457,20 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.08);padding:
   </div>
 </section>
 
+<!-- BONUS TEASER (2a dobra) -->
+<section class="sec" style="padding-top:40px;padding-bottom:0">
+  <div class="wrap">
+    <div class="reveal" style="background:linear-gradient(135deg,rgba(242,193,78,.16),rgba(30,58,76,.06));border:1px solid rgba(242,193,78,.34);border-radius:var(--r-lg);padding:clamp(22px,4vw,34px);display:flex;gap:26px;align-items:center;flex-wrap:wrap;justify-content:space-between">
+      <div style="flex:1;min-width:260px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--road-deep);font-weight:700;margin-bottom:.55em">🎁 Você não leva só os mapas</div>
+        <h3 style="font-size:clamp(1.3rem,3vw,1.9rem);font-weight:700;margin-bottom:.35em">De bônus: uma <span style="color:var(--road-deep)">aula AO VIVO</span> com o Prof. Fábio</h3>
+        <p style="color:var(--muted);font-size:1.02rem;margin:0">Ao entrar nos 50 Mapas você é convidado para uma <b style="color:var(--ink)">aula ao vivo e exclusiva</b> — onde o Prof. Fábio mostra, na prática, como usar os mapas e o que mais cai na PRF. A data chega no seu e-mail.</p>
+      </div>
+      <a href="#bonus" class="btn btn-slate btn-lg" style="flex:0 0 auto">Ver o bônus →</a>
+    </div>
+  </div>
+</section>
+
 <!-- PAIN -->
 <section class="sec">
   <div class="wrap">
@@ -783,7 +797,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.08);padding:
       <div class="price" data-price><span class="cur">R$</span> 19<span class="cents">,90</span></div>
       <div class="price-sub">pagamento único · acesso imediato</div>
       <!-- CHECKOUT: troque o href para o link da Hubla desta variante (data-checkout) -->
-      <a href="#" data-checkout class="btn btn-primary btn-lg">QUERO OS 50 MAPAS AGORA →</a>
+      <a href="#" data-checkout onclick="if(window.fbq)fbq('track','InitiateCheckout');" class="btn btn-primary btn-lg">QUERO OS 50 MAPAS AGORA →</a>
       <div class="pay-note">🔒 Compra 100% segura · Acesso liberado na hora</div>
     </div>
     <div class="guarantee reveal d2">
@@ -833,7 +847,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.08);padding:
     <span class="eyebrow">A decisão é sua</span>
     <h2>Pare de decorar no escuro.<br>A Legislação da PRF <span class="kicker-road">vira imagem hoje</span>.</h2>
     <p style="color:#bccbd6;font-size:1.12rem;margin:1em auto 2em;max-width:600px">Em poucos minutos você transforma o CTB inteiro em 50 mapas que grudam na memória — e leva junto a aula ao vivo com o Prof. Fábio.</p>
-    <a href="#" data-checkout class="btn btn-primary btn-lg">Quero os meus 50 Mapas agora →</a>
+    <a href="#" data-checkout onclick="if(window.fbq)fbq('track','InitiateCheckout');" class="btn btn-primary btn-lg">Quero os meus 50 Mapas agora →</a>
     <div style="margin-top:1em;font-size:.86rem;color:#9fb2c0">Acesso imediato · Garantia de 7 dias · Compra segura</div>
   </div>
 </section>
@@ -874,5 +888,9 @@ else{
   addEventListener('load',()=>{revealInView();setTimeout(revealInView,150)});
 }
 </script>
+
+<!-- Hubla — captura de UTM/sck nos links de checkout (encaminha origem do lead p/ a venda) -->
+<script type="text/javascript">var _prefixDomains=["https://pay.hub.la", "https://invoice.hub.la", "https://app.hub.la", "https://hub.la"];function _getUtmParams(){var a="",r=window.top.location.href,e=new URL(r);if(null!==e){var t=e.searchParams.get("utm_source"),n=e.searchParams.get("utm_medium"),m=e.searchParams.get("utm_campaign"),o=e.searchParams.get("utm_term"),s=e.searchParams.get("utm_content");-1!==r.indexOf("?")&&(a="&sck="+t+"|"+n+"|"+m+"|"+o+"|"+s,console.log("[hubla][utms]",a))}return a}!function(){var a=new URLSearchParams(window.location.search);a.toString()&&document.querySelectorAll("a").forEach((function(r){for(var e=0;e<_prefixDomains.length;e++)-1!==r.href.indexOf(_prefixDomains[e])&&(-1===r.href.indexOf("?")?r.href+="?"+a.toString()+_getUtmParams():r.href+="&"+a.toString()+_getUtmParams())}))}();</script>
+<!-- End Hubla UTM -->
 </body>
 </html>
