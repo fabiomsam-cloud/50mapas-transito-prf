@@ -6,7 +6,7 @@ Landing page low-ticket do produto **50 Mapas Mentais de Legislação de Trânsi
 ## Variantes de preço (teste A/B)
 - `index.html` — **R$ 19,90** · checkout placeholder (`#`)
 - `mapas-prf-4790.html` — **R$ 47,90** · checkout placeholder (`#`)
-- `mapas-prf-9790.html` — **R$ 97,90** · checkout **ativo** (Hubla)
+- `mapas-prf-9790.html` — **R$ 47,90** · checkout **ativo** (Hubla) · URL mantida (roda nas campanhas)
 
 Para gerar/ajustar variantes, troque apenas os marcadores `data-price` (preço) e `data-checkout`
 (link do checkout) — ver comentário no topo do HTML.
